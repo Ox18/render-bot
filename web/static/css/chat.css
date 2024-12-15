@@ -1,0 +1,140 @@
+#container-chat {
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #202126;
+  transition: all 0.3s ease-in-out;
+}
+#container-chat .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+#container-chat .info .title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+#container-chat .info .description {
+  font-size: 0.8rem;
+}
+
+#content-chat {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+#conversation {
+  border: 1px solid #292a30;
+  background-color: #1e1f24;
+  padding: 10px;
+  border-radius: 24px;
+  height: 80vh;
+  display: grid;
+  grid-template-rows: 1fr 50px;
+}
+
+#conversation #messages {
+  overflow-y: auto;
+  padding: 10px;
+}
+
+#conversation #input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #282930;
+  border-radius: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #24252b;
+}
+
+#input-message {
+  height: 38px;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+#input-message:focus {
+  outline: none;
+  border: none;
+}
+
+.button {
+  background: rgb(150, 199, 108);
+  background: linear-gradient(
+    25deg,
+    rgba(150, 199, 108, 1) 31%,
+    rgba(95, 171, 73, 1) 66%
+  );
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.button:active {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.message {
+  width: 100%;
+  height: 50px;
+  position: relative;
+}
+.message .message-content {
+  background-color: #292a30;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  max-width: 70%;
+  right: 0;
+  position: absolute;
+}
+.message-bot {
+  background-color: #1e1f24;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  max-width: 70%;
+  align-self: flex-end;
+}
+
+#iframe-receptor {
+  width: 100%;
+  height: 100vh;
+  border: none;
+  display: none;
+  transition: max-width 0.5s ease-in-out; /* Anima el cambio de tamaño */
+}
+
+#root {
+  width: 100%;
+  transition: all 0.3s ease-in-out; /* Suaviza el movimiento */
+}
+
+#root.show-iframe {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+}

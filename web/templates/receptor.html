@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receptor</title>
+    <style id="dynamic-styles"></style>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script>
+      window.addEventListener("message", (event) => {
+        const { css, js, html } = event.data;
+
+        // Apply CSS
+        const styleElement = document.getElementById("dynamic-styles");
+        styleElement.textContent = css || "";
+
+        // Render HTML
+        const contentDiv = document.getElementById("content");
+        contentDiv.innerHTML = html || "";
+
+        // Execute JS
+        const scriptElement = document.createElement("script");
+        scriptElement.textContent = js || "";
+        document.body.appendChild(scriptElement);
+      });
+    </script>
+  </body>
+</html>

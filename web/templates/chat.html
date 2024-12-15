@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Chat</title>
+    <link rel="stylesheet" href="/static/css/chat.css" />
+  </head>
+  <body>
+    <main id="root">
+      <div id="iframe-container">
+        <iframe
+          id="iframe-receptor"
+          src="/receptor"
+          title="Embedded Content"
+        ></iframe>
+      </div>
+      <div id="container-chat">
+        <div id="content-chat">
+          <div class="info">
+            <h3 class="title">Chat with Gemini</h3>
+            <p class="description">A chat with Gemini, the model.</p>
+          </div>
+          <div id="conversation">
+            <div id="messages"></div>
+            <div id="input">
+              <input
+                id="input-message"
+                type="text"
+                placeholder="Type a message..."
+              />
+              <div id="btnSendMessage" class="button">
+                <img src="/static/images/send.svg" alt="Send" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/static/js/chat.js"></script>
+  </body>
+</html>
